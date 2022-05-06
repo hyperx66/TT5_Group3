@@ -1,9 +1,10 @@
 import ExpenseList from "../expenses/ExpenseList";
 import Select from "react-select";
 import { useState } from "react";
+import classes from "./Expenses.module.css";
 
 function ExpensesPage() {
-  const [filteredExpenses, setFilteredExpense] = useState([]);
+  // const [filteredExpenses, setFilteredExpense] = useState([]);
 
   const Category = [{ label: "production" }, { label: "operating" }, { label: "financial" }, { label: "vendor" }, { label: "manpower" }, { label: "software" }, { label: "hardware" }];
   var DUMMY_DATA = [
@@ -21,10 +22,10 @@ function ExpensesPage() {
     },
   ];
 
-  setFilteredExpense(filteredExpenses);
+  // setFilteredExpense(filteredExpenses);
 
-  function newInput(event) {
-    console.log(event);
+  function newFilter(event) {
+    console.log(event.label);
     DUMMY_DATA = DUMMY_DATA.concat({
       id: "3",
       name: "lunch",
@@ -38,9 +39,10 @@ function ExpensesPage() {
     <div>
       <div>
         <p>Category:</p>
-        <Select options={Category} onChange={newInput} />
+        <Select options={Category} onChange={newFilter} />
+        <button>Create New Expense</button>
       </div>
-      <ExpenseList expenses={filteredExpenses} />
+      <ExpenseList expenses={DUMMY_DATA} />
     </div>
   );
 }
