@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import './App.css'
 import Button from './Pages/Button'
@@ -14,5 +15,19 @@ const App = () => {
       </footer>
     </div>
   )
+=======
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import ExpensesPage from "./Pages/Expenses";
+
+function App() {
+  return (
+    <div>
+      <Routes>
+        <Route path="/expenses" element={<ExpensesPage />} />
+      </Routes>
+    </div>
+  );
+>>>>>>> 88ac2663b28147829a7b435c119a4c870f81e764
 }
 export default App;
