@@ -1,9 +1,9 @@
 const Category = require("./../models/CategoryModel.js");
 
 exports.findCategory = (req, res) => {
-  const projectID = req.params.projectID;
-  
-  User.retrieveCategory(projectID, (err, data) => {
+  const projectID = req.query.projectID;
+
+  Category.retrieveCategory(projectID, (err, data) => {
     if (err)
       res.status(500).send({
         message:

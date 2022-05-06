@@ -16,14 +16,15 @@ app.use(
 );
 
 //Route Objects
-var user = require("./routes/userRoutes")
-var category = require("./routes/categoryRoutes")
-var project = require("./routes/projectRoutes")
+var user = require("./routes/userRoutes");
+var category = require("./routes/categoryRoutes");
+var project = require("./routes/projectRoutes");
+var expense = require("./routes/expensesRoutes");
 
 //Router Configuration
-app.use("/user",user)
-app.use("/category",category)
-app.use("/project",project)
+app.use("/user", user);
+app.use("/category", category);
+app.use("/project", project);
 app.use("/expenses", expense);
 
 app.listen(port, () => {
