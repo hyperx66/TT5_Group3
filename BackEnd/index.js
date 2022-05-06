@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 var corsOptions = {
-  origin: "*"
+  origin: "*",
 };
 
 app.use(cors(corsOptions));
@@ -16,10 +16,12 @@ app.use(
 );
 
 //Route Objects
-var user = require("./routes/userRoutes")
+var user = require("./routes/userRoutes");
+var expense = require("./routes/expensesRoutes");
 
 //Router Configuration
-app.use("/user",user)
+app.use("/user", user);
+app.use("/expenses", expense);
 
 app.listen(port, () => {
   console.log(`Serve live at http://localhost:${port}`);

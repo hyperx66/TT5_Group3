@@ -6,15 +6,19 @@ var User = function (user) {
 
 User.retrieveByUsername = (username, password, result) => {
   con.query(
-    "SELECT * FROM users WHERE username = ?",
-    [username],
+    "SELECT * FROM users WHERE username = ? AND password = ?",
+    [username, password],
     (err, res) => {
       if (err) {
         console.log("Error Message: ", err);
         result(err, null);
         return;
       } else {
-        result(null, { userId: "nani" });
+        if (res[0] != null) {
+          result(null, res);
+        } else {
+          result(null, "Incorrect");
+        }
       }
     }
   );
