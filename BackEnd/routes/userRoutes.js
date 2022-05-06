@@ -5,4 +5,4 @@ var router = express.Router();
 
 router.get("/getUser", userController.findUserByUsername);
 
-module.exports = router
+module.exports = router;

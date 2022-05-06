@@ -17,9 +17,13 @@ app.use(
 
 //Route Objects
 var user = require("./routes/userRoutes")
+var category = require("./routes/categoryRoutes")
+var project = require("./routes/projectRoutes")
 
 //Router Configuration
 app.use("/user",user)
+app.use("/category",category)
+app.use("/project",project)
 
 app.listen(port, () => {
   console.log(`Serve live at http://localhost:${port}`);
